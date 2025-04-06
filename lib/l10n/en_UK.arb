@@ -1,0 +1,15 @@
+{
+  "appTitle": "Car Management",
+  "mainPageTitle": "Main Page",
+  "carListPageTitle": "Car List Page",
+  "addNewCar": "Add New Car",
+  "instructions": "Use the button below to add new cars. Tap a car to view details.",
+  "brand": "Brand",
+  "model": "Model",
+  "passengers": "Passengers",
+  "tankSize": "Tank Size (litres/kWh)",
+  "save": "Save",
+  "update": "Update",
+  "delete": "Delete",
+  "allFieldsRequired": "All fields are required!"
+}
