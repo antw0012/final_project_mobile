@@ -27,7 +27,7 @@ class _CarDetailsPageState extends State<CarDetailsPage> {
       _brandController.text = widget.car!['brand'];
       _modelController.text = widget.car!['model'];
       _passengersController.text = widget.car!['passengers'].toString();
-      _tankSizeController.text = widget.car!['tank_size'].toString();
+      _tankSizeController.text = widget.car!['fuelCapacity'].toString(); // ✅ fixed key
     } else {
       loadLastCar();
     }
@@ -39,7 +39,7 @@ class _CarDetailsPageState extends State<CarDetailsPage> {
       _brandController.text = lastCar['brand'];
       _modelController.text = lastCar['model'];
       _passengersController.text = lastCar['passengers'].toString();
-      _tankSizeController.text = lastCar['tank_size'].toString();
+      _tankSizeController.text = lastCar['fuelCapacity'].toString(); // ✅ fixed key
     }
   }
 
@@ -58,9 +58,10 @@ class _CarDetailsPageState extends State<CarDetailsPage> {
       'brand': _brandController.text,
       'model': _modelController.text,
       'passengers': int.parse(_passengersController.text),
-      'fuelCapacity': double.parse(_tankSizeController.text), // Corrected key
+      'fuelCapacity': double.parse(_tankSizeController.text), // ✅ consistent
     };
 
+    print('Saving car: $car'); // ✅ helpful for debugging
 
     if (widget.car == null) {
       await dbHelper.insertCar(car);
